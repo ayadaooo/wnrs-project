@@ -22,6 +22,22 @@ function App() {
     localStorage.setItem('wnrsProgress', JSON.stringify({ currentLevel, currentIndex }))
   },[currentLevel, currentIndex]);
 
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "ArrowRight") {
+        nextCard()
+      } else if (e.key === "ArrowLeft") {
+        prevCard()
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [])
+
   const nextLevel = () => {
     setCurrentLevel(currentLevel + 1)
     setCurrentIndex(0)
@@ -31,10 +47,10 @@ function App() {
     setCurrentIndex(0)
   }
     const nextCard = () => {
-    setCurrentIndex(currentIndex + 1)
-  }
+  setCurrentIndex(prev => prev + 1)
+}
   const prevCard = () => {
-    setCurrentIndex(currentIndex - 1)
+    setCurrentIndex(current => current - 1)
   }
   const resetGame = () => {
     setCurrentLevel(1)
