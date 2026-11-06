@@ -36,24 +36,31 @@ function App() {
   const prevCard = () => {
     setCurrentIndex(currentIndex - 1)
   }
+  const resetGame = () => {
+    setCurrentLevel(1)
+    setCurrentIndex(0)
+  }
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-gray-100">
       <h1 className="text-4xl font-bold text-red-800 ">We're Not Really Strangers</h1>
       <h2 className="text-2xl font-bold text-gray-800 ">LEVEL {currentLevel}</h2>
       <div className="flex gap-4">
-      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={prevLevel} disabled={currentLevel === 1}>
+      <button className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={prevLevel} disabled={currentLevel === 1}>
         PREVIOUS LEVEL
       </button>
-      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={nextLevel} disabled={currentLevel === 3}>
+      <button className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={nextLevel} disabled={currentLevel === 3}>
         NEXT LEVEL
+      </button>
+      <button className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded" onClick={resetGame}>
+        RESET GAME
       </button>
       </div>
       <Card question={cardsByLevel[currentLevel][currentIndex]} />
       <div className="flex gap-4">
-        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={prevCard} disabled={currentIndex === 0}>
+        <button className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={prevCard} disabled={currentIndex === 0}>
           PREVIOUS
         </button>
-        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={nextCard} disabled={currentIndex === cardsByLevel[currentLevel].length - 1}>
+        <button className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded disabled:opacity-40 disabled:cursor-not-allowed" onClick={nextCard} disabled={currentIndex === cardsByLevel[currentLevel].length - 1}>
           NEXT
         </button>
       </div>

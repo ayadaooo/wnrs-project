@@ -1,7 +1,7 @@
 function Card({ question }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-12 max-w-xl min-h-48">
-      <p className="text-4xl text-center font-bold font-mono">{question}</p>
+    <div className="bg-white rounded-xl shadow-2xl p-12 w-xl h-80 flex items-center justify-center">
+      <p className="text-3xl text-red-800 text-center font-bold uppercase ">{question}</p>
     </div>
   )
 }
