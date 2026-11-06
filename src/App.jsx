@@ -1,10 +1,27 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { cardsByLevel } from './data/cards'
 import Card from './components/Card'
 
 function App() {
-  const [currentLevel, setCurrentLevel] = useState(1)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentLevel, setCurrentLevel] = useState(() => {
+  const saved = localStorage.getItem("wnrsProgress")
+  if (saved) {
+    return JSON.parse(saved).currentLevel
+  }
+  return 1
+})
+  const [currentIndex, setCurrentIndex] = useState(() => {
+  const saved = localStorage.getItem("wnrsProgress")
+  if (saved) {
+    return JSON.parse(saved).currentIndex
+  }
+  return 0
+})
+
+  useEffect(() => {
+    localStorage.setItem('wnrsProgress', JSON.stringify({ currentLevel, currentIndex }))
+  },[currentLevel, currentIndex]);
+
   const nextLevel = () => {
     setCurrentLevel(currentLevel + 1)
     setCurrentIndex(0)
