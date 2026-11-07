@@ -1,16 +1,22 @@
-# React + Vite
+# WNRS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A little side project inspired by "We're Not Really Strangers" the card game where the questions get deeper the further you go. Level 1 is light "first impressions" stuff, by Level 3 it can get pretty real. My intention on making this app was for people to have access anywhere in the world to this amazing card game that led deeper relationships with my friends and my loved ones.
 
-Currently, two official plugins are available:
+Live: https://wnrsproject.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does right now
 
-## React Compiler
+- Click or arrow-key through levels of questions, 1 through 3
+- Saves your spot automatically so refreshing doesn't reset you back to the start
+- Reset button if you want to start over
+- Built for screen-sharing with someone and playing together, no accounts or backend needed yet, just click through it
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+- React + Vite (plain JS, no TypeScript)
+- Tailwind CSS
+- Deployed on Netlify
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What's next
+
+Building out a Django backend so the questions live in an actual database instead of being hardcoded, served through an API. After that, planning to save progress server-side too so it's not just stuck to one browser, and maybe real multiplayer eventually.
