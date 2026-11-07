@@ -47,11 +47,17 @@ function App() {
     setCurrentIndex(0)
   }
     const nextCard = () => {
-  setCurrentIndex(prev => prev + 1)
+  setCurrentIndex(prev => {
+    if (prev === cardsByLevel[currentLevel].length - 1) return prev
+    return prev + 1
+  })
 }
   const prevCard = () => {
-    setCurrentIndex(current => current - 1)
-  }
+  setCurrentIndex(prev => {
+    if (prev === 0) return prev
+    return prev - 1
+  })
+}
   const resetGame = () => {
     setCurrentLevel(1)
     setCurrentIndex(0)
