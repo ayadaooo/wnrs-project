@@ -63,7 +63,7 @@ function Game() {
     setCurrentIndex(0)
   }
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-gray-100">
+    <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-gray-100 px-4">
       <h1 className="text-4xl font-bold text-red-800 ">We're Not Really Strangers</h1>
       <h2 className="text-2xl font-bold text-gray-800 ">LEVEL {currentLevel}</h2>
       <div className="flex gap-4">
