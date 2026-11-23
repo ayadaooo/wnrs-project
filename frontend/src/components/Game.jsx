@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { cardsByLevel } from './data/cards'
-import Card from './components/Card'
+import { cardsByLevel } from '../data/cards'
+import Card from './Card'
 
-function App() {
+function Game() {
   const [currentLevel, setCurrentLevel] = useState(() => {
   const saved = localStorage.getItem("wnrsProgress")
   if (saved) {
@@ -90,4 +90,4 @@ function App() {
   )
 }
 
-export default App
+export default Game
